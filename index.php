@@ -1,4 +1,3 @@
 <?php 
-	echo"hi carbon"
-	
+	echo"hi carbon"	
 ?>
