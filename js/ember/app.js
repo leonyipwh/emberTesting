@@ -9,33 +9,4 @@ window.App = Ember.Application.create({
   LOG_TRANSITIONS_INTERNAL: true
 });
 
-
-App.Router.map(function(){
-	this.resource('indexPage');
-	this.route('gitPage');
-});
-
-App.GitPageController = Ember.Controller.extend({
-	git: "ok!",
-});
-
-App.IndexPageRoute = Ember.Route.extend({
-	welcome: "Welcome!!",
-  	model: function(){
-		return App.STAFFS;
-	}
-});
-
-
-App.STAFFS =[
-
-	{
-		name:"Leon",
-		age:"20",
-	},
-
-	{
-		name:"Leo",
-		age:"19",
-	},
-];
+App.ApplicationAdapter = DS.FixtureAdapter.extend();
