@@ -9,11 +9,14 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
+        <script src="bower_components/ember/ember.js"></script>
         <script src="js/ember/app.js"></script>
         <script src="js/ember/route.js"></script>
         <script src="js/ember/model.js"></script>
         <script src="js/ember/controller.js"></script>
-        <script src="bower_components/ember/ember.js"></script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -55,7 +58,7 @@
 	    </div>
 	    <p class='pull-right text-muted'>Rendered on {{time}}</p> 
 	  </script>
-	  
+
 	  <script type='text/x-handlebars' data-template-name='contacts/index'>
 	    <div class='row'>
 	      <img {{bind-attr src='avatar'}} alt='Avatar' class='img-thumbnail col-sm-4'/>
@@ -134,7 +137,5 @@
 	    </div>
 	  </script>
 
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     </body>
 </html>
