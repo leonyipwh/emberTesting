@@ -1,4 +1,3 @@
-
 // App.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 // App.Product = DS.Model.extend({
