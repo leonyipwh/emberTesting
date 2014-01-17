@@ -9,15 +9,16 @@ window.App = Ember.Application.create({
   LOG_TRANSITIONS_INTERNAL: true
 });
 
+/* w/o ember Data */
 App.EmberPull = Ember.Object.extend();
 
-App.EmberPull.reopenClass({
+App.Item.reopenClass({
   all: function() {
       return $.getJSON("http://api.ihackernews.com/page?format=jsonp&callback=?").then(function(response) {
         var items = [];
  
-        response.items.forEach( function (jsonItem) {
-          items.push( App.EmberPull.create(jsonItem) );
+        response.items.forEach( function (item) {
+          items.push( App.Item.create(item) );
         });
  
          return items;
@@ -25,4 +26,39 @@ App.EmberPull.reopenClass({
   }
 });
 
+App.IndexRoute = Ember.Route.extend({
+  model: function() {
+    return App.Item.all();
+  }
+});
+
+
+
+
+/* Ember Data */
+// var App = Ember.Application.create({
+//   LOG_TRANSITIONS: true
+// });
+
+// App.Store = DS.Store.extend({
+//   revision: 11,
+//   url: "http://instagram.artonagroup.com/api/random?count=3"
+// });
+
+// App.Post = DS.Model.extend({
+//   title: DS.attr('string'),
+//   body: DS.attr('string')
+// });
+
+// var posts = App.Post.find();
+
+// App.Router.map(function(){
+//   this.resource('posts');
+// });
+
+// App.PostsRoute = Ember.Route.extend({
+//   model: function() {
+//     return App.Post.find();
+//   }
+// });
 
